@@ -46,7 +46,6 @@ function Board({ xIsNext, squares, onPlay, winner }) {
 export default function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
-  const [isDescending, setIsDescending] = useState(false);
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
   const winner = calculateWinner(currentSquares);
@@ -70,10 +69,6 @@ export default function Game() {
   const currentMoveDescription =
     currentMove > 0 ? `You are at move #${currentMove}` : 'Go to game start';
 
-  const toggleSort = () => {
-    setIsDescending(!isDescending);
-  };
-
   const moves = history.map((squares, move) => {
     const description = move === currentMove ? currentMoveDescription : `Go to move #${move}`;
     const location = move === 0 ? '' : `(${calculateRowCol(move)})`;
@@ -86,8 +81,6 @@ export default function Game() {
     );
   });
 
-  const sortedMoves = isDescending ? moves : moves.slice().reverse();
-
   return (
     <div className="game">
       <div className="game-board">
@@ -96,14 +89,14 @@ export default function Game() {
       <div className="game-info">
         <div>
           <button onClick={restartGame}>Restart Game</button>
-          <button onClick={toggleSort}>Toggle Sort</button>
         </div>
+        <div>{xIsNext ? "Player: X" : "Player: O"}</div> {/* Display current player */}
         {winner ? (
           <Modal message={`${winner.winner} Wins!`} onRestart={restartGame} />
         ) : isBoardFull ? (
           <Modal message="The only winning move is not to play." onRestart={restartGame} />
         ) : (
-          <ol>{sortedMoves}</ol>
+          <ol>{moves}</ol>
         )}
       </div>
     </div>
