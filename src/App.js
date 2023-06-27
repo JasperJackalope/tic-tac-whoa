@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
-function Square({ value, onSquareClick, isWinnerSquare }) {
-  const className = isWinnerSquare ? 'square winner' : 'square';
+function Square({ value, onSquareClick, isHighlighted }) {
   return (
-    <button className={className} onClick={onSquareClick}>
+    <button className={`square ${isHighlighted ? 'highlighted' : ''}`} onClick={onSquareClick}>
       {value}
     </button>
   );
@@ -15,51 +14,44 @@ function Board({ xIsNext, squares, onPlay, winner }) {
       return;
     }
     const nextSquares = squares.slice();
-    if (xIsNext) {
-      nextSquares[i] = 'X';
-    } else {
-      nextSquares[i] = 'O';
-    }
+    nextSquares[i] = xIsNext ? 'X' : 'O';
     onPlay(nextSquares);
   }
 
-  function renderBoard() {
-    const board = [];
-    for (let row = 0; row < 3; row++) {
-      const squaresRow = [];
-      for (let col = 0; col < 3; col++) {
-        const index = row * 3 + col;
-        const isWinnerSquare = winner && winner.includes(index);
-        squaresRow.push(
-          <Square
-            key={index}
-            value={squares[index]}
-            onSquareClick={() => handleClick(index)}
-            isWinnerSquare={isWinnerSquare}
-          />
-        );
-      }
-      board.push(
-        <div key={row} className="board-row">
-          {squaresRow}
-        </div>
-      );
-    }
-    return board;
+  function renderSquare(i, isHighlighted) {
+    return (
+      <Square
+        value={squares[i]}
+        onSquareClick={() => handleClick(i)}
+        key={i}
+        isHighlighted={isHighlighted}
+      />
+    );
   }
 
-  const status = winner ? 'Winner: ' + winner : 'Next player: ' + (xIsNext ? 'X' : 'O');
+  const winningLine = winner ? winner.line : [];
 
-  return (
-    <React.Fragment>
-      <div className="status">{status}</div>
-      {renderBoard()}
-    </React.Fragment>
-  );
+  const rows = [0, 1, 2].map((row) => {
+    const cols = [0, 1, 2].map((col) => {
+      const position = row * 3 + col;
+      const isHighlighted = winningLine.includes(position);
+      return renderSquare(position, isHighlighted);
+    });
+    return <div className="board-row" key={row}>{cols}</div>;
+  });
+
+  return <div>{rows}</div>;
 }
 
 export default function Game() {
-  const [history, setHistory] = useState([Array(9).fill(null)]);
+  function calculateRowCol(move) {
+    const row = Math.floor(move / 3) + 1;
+    const col = (move % 3) + 1;
+    return `${row}, ${col}`;
+  }
+
+  const initialHistory = [Array(9).fill(null)];
+  const [history, setHistory] = useState(initialHistory);
   const [currentMove, setCurrentMove] = useState(0);
   const [isDescending, setIsDescending] = useState(false);
   const xIsNext = currentMove % 2 === 0;
@@ -74,6 +66,11 @@ export default function Game() {
 
   function jumpTo(nextMove) {
     setCurrentMove(nextMove);
+  }
+
+  function restartGame() {
+    setHistory(initialHistory);
+    setCurrentMove(0);
   }
 
   const currentMoveDescription = currentMove > 0 ? `You are at move #${currentMove}` : 'Go to game start';
@@ -103,6 +100,7 @@ export default function Game() {
       </div>
       <div className="game-info">
         <div>
+          <button onClick={restartGame}>Restart Game</button>
           <button onClick={toggleSort}>Toggle Sort</button>
         </div>
         <ol>{sortedMoves}</ol>
@@ -122,17 +120,16 @@ function calculateWinner(squares) {
     [0, 4, 8],
     [2, 4, 6],
   ];
+
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return [a, b, c];
+      return {
+        winner: squares[a],
+        line: [a, b, c],
+      };
     }
   }
-  return null;
-}
 
-function calculateRowCol(move) {
-  const row = Math.floor((move - 1) / 3) + 1;
-  const col = (move - 1) % 3 + 1;
-  return `${row}, ${col}`;
+  return null;
 }
