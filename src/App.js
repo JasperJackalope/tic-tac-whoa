@@ -44,24 +44,18 @@ function Board({ xIsNext, squares, onPlay, winner }) {
 }
 
 export default function Game() {
-  function calculateRowCol(move) {
-    const row = Math.floor(move / 3) + 1;
-    const col = (move % 3) + 1;
-    return `${row}, ${col}`;
-  }
-
-  const initialHistory = [Array(9).fill(null)];
-  const [history, setHistory] = useState(initialHistory);
+  const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
   const [isDescending, setIsDescending] = useState(false);
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
   const winner = calculateWinner(currentSquares);
+  const isBoardFull = currentMove === 9 && !winner;
 
   function handlePlay(nextSquares) {
-    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
-    setHistory(nextHistory);
-    setCurrentMove(nextHistory.length - 1);
+    const nextHistory = history.slice(0, currentMove + 1);
+    setHistory([...nextHistory, nextSquares]);
+    setCurrentMove(nextHistory.length);
   }
 
   function jumpTo(nextMove) {
@@ -69,11 +63,12 @@ export default function Game() {
   }
 
   function restartGame() {
-    setHistory(initialHistory);
+    setHistory([Array(9).fill(null)]);
     setCurrentMove(0);
   }
 
-  const currentMoveDescription = currentMove > 0 ? `You are at move #${currentMove}` : 'Go to game start';
+  const currentMoveDescription =
+    currentMove > 0 ? `You are at move #${currentMove}` : 'Go to game start';
 
   const toggleSort = () => {
     setIsDescending(!isDescending);
@@ -103,10 +98,33 @@ export default function Game() {
           <button onClick={restartGame}>Restart Game</button>
           <button onClick={toggleSort}>Toggle Sort</button>
         </div>
-        <ol>{sortedMoves}</ol>
+        {winner ? (
+          <Modal message={`${winner.winner} Wins!`} onRestart={restartGame} />
+        ) : isBoardFull ? (
+          <Modal message="The only winning move is not to play." onRestart={restartGame} />
+        ) : (
+          <ol>{sortedMoves}</ol>
+        )}
       </div>
     </div>
   );
+}
+
+function Modal({ message, onRestart }) {
+  return (
+    <div className="modal">
+      <div className="modal-content">
+        <h2>{message}</h2>
+        <button onClick={onRestart}>Start New Game</button>
+      </div>
+    </div>
+  );
+}
+
+function calculateRowCol(move) {
+  const row = Math.floor(move / 3) + 1;
+  const col = (move % 3) + 1;
+  return `${row}, ${col}`;
 }
 
 function calculateWinner(squares) {
