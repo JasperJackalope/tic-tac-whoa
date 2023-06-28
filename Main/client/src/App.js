@@ -5,6 +5,7 @@ import WelcomePage from './components/WelcomePage';
 import MainPage from './components/MainPage';
 import TicTacToeGame from './components/TicTac';
 import Navbar from './components/Navbar';
+import './styles.css'; // Import the styles.css file
 
 function App() {
   const [user, setUser] = useState(null);
