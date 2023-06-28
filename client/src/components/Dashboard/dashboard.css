@@ -1,0 +1,14 @@
+.portfolio {
+    max-width: 1200px;
+  }
+  
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+  }
+
+  h2 {
+    text-align: center;
+  }

@@ -1,0 +1,199 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+.App {
+  background-color: white;
+}
+
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Auth-form {
+  width: 420px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.Auth-form-content {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.Auth-form-title {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 800;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(34, 34, 34);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Comic Sans MS, sans-serif; /* Change font to Comic Sans MS */
+  margin: 20px;
+  padding: 0;
+  background-color: #f6d7b0; /* Add a bright yellow background color */
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 40px; /* Increase font size */
+  color: #ff0066; /* Set a vibrant pink color */
+  text-transform: uppercase; /* Apply uppercase text */
+  text-shadow: 2px 2px 4px #000000; /* Add a text shadow */
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 36px; /* Increase font size */
+  color: #0066ff; /* Set a vibrant blue color */
+  text-transform: uppercase; /* Apply uppercase text */
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 32px; /* Increase font size */
+  color: #00cc00; /* Set a bright green color */
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 28px; /* Increase font size */
+  color: #ff9933; /* Set an orange color */
+}
+
+h5 {
+  margin-top: 0;
+  font-size: 24px; /* Increase font size */
+  color: #ff66cc; /* Set a pink color */
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 20px; /* Increase font size */
+  color: #ffff66; /* Set a yellow color */
+}
+
+code {
+  font-size: 1.2em;
+  color: #ff0066; /* Set a vibrant pink color */
+  font-weight: bold;
+}
+
+ul {
+  padding-left: 20px;
+  list-style-type: square; /* Use square bullets */
+}
+
+.square {
+  background: #008080; /* Set a bright yellow background color */
+  border: 3px solid #ff9933; /* Set an orange border with 3px width */
+  float: left;
+  font-size: 72px; /* Triple the font size */
+  font-weight: bold;
+  line-height: 138px; /* Triple the line height */
+  height: 138px; /* Triple the height */
+  margin-right: -3px; /* Adjust the margin to accommodate the thicker border */
+  margin-top: -3px; /* Adjust the margin to accommodate the thicker border */
+  padding: 0;
+  text-align: center;
+  width: 138px; /* Triple the width */
+  color: #ff0066; /* Set a vibrant pink color */
+}
+
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+  color: #0066ff; /* Set a vibrant blue color */
+  font-size: 28px; /* Increase font size */
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+  font-size: 24px; /* Increase font size */
+  color: #ff66cc; /* Set a pink color */
+}
+
+.board-row {
+  display: flex;
+  justify-content: center; /* Center the squares horizontally */
+}
+
+.board {
+  margin-bottom: 20px; /* Add some space between the board and buttons */
+}
+
+.button-row {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+}
+
+.button {
+  margin: 0 10px; /* Add some space between the buttons */
+}
+

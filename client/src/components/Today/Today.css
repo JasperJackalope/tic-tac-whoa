@@ -1,0 +1,17 @@
+.today-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.today-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.today-container > *:not(:last-child) {
+  margin-bottom: 20px; /* Add this line to create space between each today-container */
+}
