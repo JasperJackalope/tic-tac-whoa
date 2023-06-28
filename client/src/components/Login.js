@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_USER, LOGIN_USER } from '../utils/mutations';
+import './Login.css';
 
 const Login = () => {
   let [authMode, setAuthMode] = useState('signin');
@@ -77,10 +78,8 @@ const Login = () => {
   if (authMode === 'signin') {
   return (
     <div className="Auth-form-container">
-      <h2>
-        Can you take on this tubular challenge?
-      </h2>
       <form className="Auth-form" onSubmit={handleSignupFormSubmit}>
+      <h2>Can you take on this tubular challenge?</h2>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign Up</h3>
           <div className="text-center">
@@ -137,6 +136,7 @@ const Login = () => {
 return (
   <div className="Auth-form-container">
     <form className="Auth-form" onSubmit={handleLoginFormSubmit}>
+    <h2>Can you take on this tubular challenge?</h2>
       <div className="Auth-form-content">
         <h3 className="Auth-form-title">Sign In</h3>
         <div className="text-center">

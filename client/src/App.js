@@ -12,7 +12,6 @@ import Dashboard from "./components/Dashboard/Dashboard.js";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import GamePage from './components/Game/Game';
-import WhacAMole from './components/Mole/Mole';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -63,7 +62,6 @@ function App() {
               <Route path="/" element={<Login />} />
               <Route path="/game" element={<GamePage />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/mole" element={<WhacAMole />} />
             </Routes>
           </Router>
         </ApolloProvider>

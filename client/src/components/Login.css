@@ -1,0 +1,77 @@
+/* Login container */
+.Auth-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f6d7b0; /* Light peach */
+  }
+  
+  /* Login form */
+  .Auth-form {
+    width: 420px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #ffffff; /* White */
+  }
+  
+  /* Login form content */
+  .Auth-form-content {
+    text-align: center;
+  }
+  
+  /* Login form title */
+  .Auth-form-title {
+    margin-bottom: 1em;
+    font-size: 24px;
+    color: #333333; /* Dark gray */
+    font-weight: 800;
+  }
+  
+  /* Link */
+  .link-primary {
+    color: #4169e1; /* Royal blue */
+    cursor: pointer;
+  }
+  
+  /* Form group */
+  .form-group {
+    margin-top: 1.5em;
+  }
+  
+  /* Label */
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333; /* Dark gray */
+  }
+  
+  /* Input field */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #dddddd; /* Light gray */
+    border-radius: 4px;
+    background-color: #f8f8f8; /* Light gray */
+  }
+  
+  /* Submit button */
+  button[type="submit"] {
+    width: 100%;
+    padding: 0.75em;
+    border: none;
+    border-radius: 4px;
+    background-color: #4169e1; /* Royal blue */
+    color: #ffffff; /* White */
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Submit button on hover */
+  button[type="submit"]:hover {
+    background-color: #0038a8; /* Dark blue */
+  }
+  

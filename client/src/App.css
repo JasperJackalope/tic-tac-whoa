@@ -1,7 +1,14 @@
+/* Overall container */
 .App {
   text-align: center;
+  background-color: #f6d7b0; /* Light peach */
+  margin: 20px;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff; /* White */
 }
 
+/* Logo */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,26 +20,24 @@
   }
 }
 
+/* Header */
 .App-header {
-  background-color: #282c34;
+  background-color: #2a2c35; /* Dark gray */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff; /* White */
 }
 
+/* Link */
 .App-link {
-  color: #61dafb;
+  color: #77dd77; /* Pastel green */
 }
 
-
-.App {
-  background-color: white;
-}
-
+/* Authentication form container */
 .Auth-form-container {
   display: flex;
   justify-content: center;
@@ -41,34 +46,39 @@
   height: 100vh;
 }
 
+/* Authentication form */
 .Auth-form {
   width: 420px;
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
   padding-top: 30px;
   padding-bottom: 20px;
   border-radius: 8px;
-  background-color: white;
+  background-color: #ffffff; /* White */
 }
 
+/* Authentication form content */
 .Auth-form-content {
   padding-left: 12%;
   padding-right: 12%;
 }
 
+/* Authentication form title */
 .Auth-form-title {
   text-align: center;
   margin-bottom: 1em;
   font-size: 24px;
-  color: rgb(34, 34, 34);
+  color: #333333; /* Dark gray */
   font-weight: 800;
 }
 
+/* Label */
 label {
   font-size: 14px;
   font-weight: 600;
-  color: rgb(34, 34, 34);
+  color: #333333; /* Dark gray */
 }
 
+/* Keyframes for logo spin animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -78,122 +88,128 @@ label {
   }
 }
 
+/* Global box-sizing rule */
 * {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Comic Sans MS, sans-serif; /* Change font to Comic Sans MS */
-  margin: 20px;
-  padding: 0;
-  background-color: #f6d7b0; /* Add a bright yellow background color */
-}
+/* Additional styles */
 
+/* Heading styles */
 h1 {
   margin-top: 0;
   font-size: 40px; /* Increase font size */
-  color: #ff0066; /* Set a vibrant pink color */
-  text-transform: uppercase; /* Apply uppercase text */
-  text-shadow: 2px 2px 4px #000000; /* Add a text shadow */
+  color: #ff7f50; /* Coral */
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
   margin-top: 0;
   font-size: 36px; /* Increase font size */
-  color: #0066ff; /* Set a vibrant blue color */
-  text-transform: uppercase; /* Apply uppercase text */
+  color: #66cdaa; /* Medium aquamarine */
+  text-transform: uppercase;
 }
 
 h3 {
   margin-top: 0;
   font-size: 32px; /* Increase font size */
-  color: #00cc00; /* Set a bright green color */
+  color: #9932cc; /* Dark orchid */
 }
 
 h4 {
   margin-top: 0;
   font-size: 28px; /* Increase font size */
-  color: #ff9933; /* Set an orange color */
+  color: #4169e1; /* Royal blue */
 }
 
 h5 {
   margin-top: 0;
   font-size: 24px; /* Increase font size */
-  color: #ff66cc; /* Set a pink color */
+  color: #e9967a; /* Dark salmon */
 }
 
 h6 {
   margin-top: 0;
   font-size: 20px; /* Increase font size */
-  color: #ffff66; /* Set a yellow color */
+  color: #daa520; /* Goldenrod */
 }
 
+/* Code element styles */
 code {
   font-size: 1.2em;
-  color: #ff0066; /* Set a vibrant pink color */
+  color: #ff1493; /* Deep pink */
   font-weight: bold;
 }
 
+/* List styles */
 ul {
   padding-left: 20px;
-  list-style-type: square; /* Use square bullets */
+  list-style-type: square;
 }
 
+/* Square element styles */
 .square {
-  background: #008080; /* Set a bright yellow background color */
-  border: 3px solid #ff9933; /* Set an orange border with 3px width */
+  background: #00ced1; /* Dark turquoise */
+  border: 3px solid #9370db; /* Medium purple */
   float: left;
-  font-size: 72px; /* Triple the font size */
+  font-size: 72px; /* Increase font size */
   font-weight: bold;
-  line-height: 138px; /* Triple the line height */
-  height: 138px; /* Triple the height */
-  margin-right: -3px; /* Adjust the margin to accommodate the thicker border */
-  margin-top: -3px; /* Adjust the margin to accommodate the thicker border */
+  line-height: 138px; /* Increase line height */
+  height: 138px; /* Increase height */
+  margin-right: -3px; /* Adjust margin */
+  margin-top: -3px; /* Adjust margin */
   padding: 0;
   text-align: center;
-  width: 138px; /* Triple the width */
-  color: #ff0066; /* Set a vibrant pink color */
+  width: 138px; /* Increase width */
+  color: #ff1493; /* Deep pink */
 }
 
-
+/* Board row styles */
 .board-row:after {
   clear: both;
-  content: '';
+  content: "";
   display: table;
 }
 
+/* Status element styles */
 .status {
   margin-bottom: 10px;
-  color: #0066ff; /* Set a vibrant blue color */
+  color: #4169e1; /* Royal blue */
   font-size: 28px; /* Increase font size */
 }
 
+/* Game container styles */
 .game {
   display: flex;
   flex-direction: row;
 }
 
+/* Game info styles */
 .game-info {
   margin-left: 20px;
   font-size: 24px; /* Increase font size */
-  color: #ff66cc; /* Set a pink color */
+  color: #e9967a; /* Dark salmon */
 }
 
+/* Board row styles */
 .board-row {
   display: flex;
-  justify-content: center; /* Center the squares horizontally */
+  justify-content: center;
 }
 
+/* Board styles */
 .board {
-  margin-bottom: 20px; /* Add some space between the board and buttons */
+  margin-bottom: 20px;
 }
 
+/* Button row styles */
 .button-row {
   display: flex;
-  justify-content: center; /* Center the buttons horizontally */
+  justify-content: center;
 }
 
+/* Button styles */
 .button {
-  margin: 0 10px; /* Add some space between the buttons */
+  margin: 0 10px;
 }
-
