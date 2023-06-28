@@ -13,7 +13,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import GamePage from './components/Game/Game';
 import WhacAMole from './components/Mole/Mole';
-// import Today from "./components/today";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
