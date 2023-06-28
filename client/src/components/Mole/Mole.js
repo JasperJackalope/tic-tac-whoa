@@ -115,6 +115,16 @@ const WhacAMole = () => {
     setTimeOver(true);
   };
 
+  const handlePlayAgain = () => {
+    setScore(0);
+    setTimeOver(false);
+  };
+
+  const handleReturnHome = () => {
+    window.location.href = '/dashboard';
+  };
+  
+
   useEffect(() => {
     if (timeOver) {
       alert(`Game Over! Your score: ${score}`);
@@ -123,19 +133,30 @@ const WhacAMole = () => {
 
   return (
     <Fragment>
-      <Score value={score} />
-      <Timer time={TIME_LIMIT} interval={100} onEnd={handleTimeOver} />
-      <Moles>
-        {generateMoles(NUMBER_OF_MOLES).map((mole, index) => (
-          <Mole
-            key={index}
-            onWhack={handleWhack}
-            points={mole.points}
-            delay={mole.delay}
-            speed={mole.speed}
-          />
-        ))}
-      </Moles>
+      {timeOver ? (
+        <div>
+          <h2>Game Over!</h2>
+          <p>Your score: {score}</p>
+          <button onClick={handlePlayAgain}>Play Again</button>
+          <button onClick={handleReturnHome}>Home</button>
+        </div>
+      ) : (
+        <Fragment>
+          <Score value={score} />
+          <Timer time={TIME_LIMIT} interval={100} onEnd={handleTimeOver} />
+          <Moles>
+            {generateMoles(NUMBER_OF_MOLES).map((mole, index) => (
+              <Mole
+                key={index}
+                onWhack={handleWhack}
+                points={mole.points}
+                delay={mole.delay}
+                speed={mole.speed}
+              />
+            ))}
+          </Moles>
+        </Fragment>
+      )}
     </Fragment>
   );
 };
