@@ -79,7 +79,7 @@ const Login = () => {
   return (
     <div className="Auth-form-container">
       <form className="Auth-form pink" onSubmit={handleSignupFormSubmit}>
-      <h2>Can you take on this tubular challenge?</h2>
+      <h3>Can you take on this tubular challenge?</h3>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign Up</h3>
           <div className="text-center text">
@@ -136,7 +136,7 @@ const Login = () => {
 return (
   <div className="Auth-form-container">
     <form className="Auth-form pink" onSubmit={handleLoginFormSubmit}>
-    <h2>Can you take on this tubular challenge?</h2>
+    <h3>Can you take on this tubular challenge?</h3>
       <div className="Auth-form-content">
         <h3 className="Auth-form-title">Sign In</h3>
         <div className="text-center text">
