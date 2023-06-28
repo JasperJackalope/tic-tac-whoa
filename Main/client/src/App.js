@@ -5,6 +5,7 @@ import WelcomePage from './components/WelcomePage';
 import MainPage from './components/MainPage';
 import TicTacToeGame from './components/TicTac';
 import Navbar from './components/Navbar';
+import LogoutPage from './components/LogoutPage';
 import './styles.css'; // Import the styles.css file
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/" element={<WelcomePage handleLogin={handleLogin} user={user} />} />
           <Route path="/main" element={<MainPage user={user} handleLogout={handleLogout} />} />
           <Route path="/game" element={<TicTacToeGame />} />
+          <Route path="/logout" element={<LogoutPage handleLogin={handleLogin} user={user} />} />
         </Routes>
       </>
     </Router>
