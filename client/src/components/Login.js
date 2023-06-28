@@ -77,6 +77,9 @@ const Login = () => {
   if (authMode === 'signin') {
   return (
     <div className="Auth-form-container">
+      <h2>
+        Can you take on this tubular challenge?
+      </h2>
       <form className="Auth-form" onSubmit={handleSignupFormSubmit}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign Up</h3>
