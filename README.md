@@ -36,5 +36,9 @@ This repo uses the MIT License.
 
 My github can be accessed at: https://github.com/JasperJackalope/tic-tac-whoa
 
+Game is available at: https://immense-falls-31718-5d0032526827.herokuapp.com/
+
+My email is as djb.ske@gmail.com 
+
 
 
