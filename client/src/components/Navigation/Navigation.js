@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navigation.css'; // Import the CSS file
+// import '../../App2.css';
 
 function NavigationBar() {
   return (

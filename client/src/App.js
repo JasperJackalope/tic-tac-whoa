@@ -13,7 +13,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import GamePage from './components/Game/Game';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./App2.css";
 
 function App() {
   const [route, setRoute] = React.useState(window.location.pathname);

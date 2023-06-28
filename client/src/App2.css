@@ -1,12 +1,15 @@
 /* Overall container */
+/* Overall container */
 .App {
   text-align: center;
   background-color: #f6d7b0; /* Light peach */
-  margin: 20px;
+  margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   color: #ffffff; /* White */
+  height: 100vh; /* Fill the entire viewport height */
 }
+
 
 /* Logo */
 .App-logo {
@@ -115,7 +118,6 @@ h3 {
   margin-top: 0;
   font-size: 32px; /* Increase font size */
   color: #9932cc; /* Dark orchid */
-  text-transform: uppercase;
 }
 
 h4 {
@@ -133,84 +135,61 @@ h5 {
 h6 {
   margin-top: 0;
   font-size: 20px; /* Increase font size */
-  color: #daa520; /* Goldenrod */
-}
-
-/* Code element styles */
-code {
-  font-size: 1.2em;
-  color: #ff1493; /* Deep pink */
-  font-weight: bold;
-}
-
-/* List styles */
-ul {
-  padding-left: 20px;
-  list-style-type: square;
-}
-
-/* Square element styles */
-.square {
-  background: #00ced1; /* Dark turquoise */
-  border: 3px solid #9370db; /* Medium purple */
-  float: left;
-  font-size: 72px; /* Increase font size */
-  font-weight: bold;
-  line-height: 138px; /* Increase line height */
-  height: 138px; /* Increase height */
-  margin-right: -3px; /* Adjust margin */
-  margin-top: -3px; /* Adjust margin */
-  padding: 0;
-  text-align: center;
-  width: 138px; /* Increase width */
-  color: #ff1493; /* Deep pink */
-}
-
-/* Board row styles */
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-/* Status element styles */
-.status {
-  margin-bottom: 10px;
-  color: #4169e1; /* Royal blue */
-  font-size: 28px; /* Increase font size */
-}
-
-/* Game container styles */
-.game {
-  display: flex;
-  flex-direction: row;
-}
-
-/* Game info styles */
-.game-info {
-  margin-left: 20px;
-  font-size: 24px; /* Increase font size */
-  color: #e9967a; /* Dark salmon */
-}
-
-/* Board row styles */
-.board-row {
-  display: flex;
-  justify-content: center;
-}
-
-/* Board styles */
-.board {
-  margin-bottom: 20px;
-}
-
-/* Button row styles */
-.button-row {
-  display: flex;
-  justify-content: center;
+  color: #808080; /* Gray */
 }
 
 /* Button styles */
 .button {
-  margin: 0 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
+
+.primary-button {
+  background-color: #337ab7; /* Primary color */
+  color: #ffffff; /* White */
+}
+
+.secondary-button {
+  background-color: #5bc0de; /* Secondary color */
+  color: #ffffff; /* White */
+}
+
+.success-button {
+  background-color: #5cb85c; /* Success color */
+  color: #ffffff; /* White */
+}
+
+.warning-button {
+  background-color: #f0ad4e; /* Warning color */
+  color: #ffffff; /* White */
+}
+
+.error-button {
+  background-color: #d9534f; /* Error color */
+  color: #ffffff; /* White */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  /* Logo size */
+  .App-logo {
+    height: 30vmin;
+  }
+
+  /* Header font size */
+  .App-header {
+    font-size: calc(10px + 1vmin);
+  }
+
+  /* Authentication form width */
+  .Auth-form {
+    width: 90%;
+  }
+}
+

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import './dashboard.css'; // import the CSS file
+// import '../../App2.css';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../../utils/queries';
 

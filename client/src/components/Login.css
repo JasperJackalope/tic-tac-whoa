@@ -74,4 +74,11 @@
   button[type="submit"]:hover {
     background-color: #0038a8; /* Dark blue */
   }
+
+  .text {
+    color: black;
+  }
   
+  .pink {
+    background-color: #f26b8A;
+  }

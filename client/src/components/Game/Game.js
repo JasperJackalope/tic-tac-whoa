@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navigation from '../Navigation/Navigation';
 import "./Game.css";
+// import '../../App2.css';
 
 function Square({ value, onSquareClick, isHighlighted }) {
   return (

@@ -78,11 +78,11 @@ const Login = () => {
   if (authMode === 'signin') {
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form" onSubmit={handleSignupFormSubmit}>
+      <form className="Auth-form pink" onSubmit={handleSignupFormSubmit}>
       <h2>Can you take on this tubular challenge?</h2>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign Up</h3>
-          <div className="text-center">
+          <div className="text-center text">
             Already registered?{" "}
             <span className="link-primary" onClick={changeAuthMode}>
               Sign In
@@ -135,11 +135,11 @@ const Login = () => {
 
 return (
   <div className="Auth-form-container">
-    <form className="Auth-form" onSubmit={handleLoginFormSubmit}>
+    <form className="Auth-form pink" onSubmit={handleLoginFormSubmit}>
     <h2>Can you take on this tubular challenge?</h2>
       <div className="Auth-form-content">
         <h3 className="Auth-form-title">Sign In</h3>
-        <div className="text-center">
+        <div className="text-center text">
           Not registered yet?{" "}
           <span className="link-primary" onClick={changeAuthMode}>
             Sign Up
