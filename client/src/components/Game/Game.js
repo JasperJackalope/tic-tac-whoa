@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navigation from '../Navigation/Navigation';
 import "./Game.css";
-// import '../../App2.css';
 
 function Square({ value, onSquareClick, isHighlighted }) {
   return (
@@ -99,10 +98,10 @@ function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} winner={winner} />
       </div>
       <div className="game-info">
+      <div>{status}</div>
         <div>
           <button onClick={restartGame}>Restart Game</button>
         </div>
-        <div>{status}</div>
         {!winner && !isBoardFull && <ol>{moves}</ol>}
       </div>
     </div>
@@ -145,12 +144,15 @@ const GamePage = () => {
   return (
     <div>
       <Navigation />
-      <section className="portfolio container text-center">
-        <h2>Gnarly Dudes and Dudettes!</h2>
-        <Game />
+      <section className="portfolio container text-center spacing">
+        <h2>Game On Gnarly Dudes!</h2>
+        <div className="game-container">
+          <Game />
+        </div>
       </section>
     </div>
   );
 };
+
 
 export default GamePage;

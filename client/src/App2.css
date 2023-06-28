@@ -9,8 +9,6 @@
   color: #ffffff; /* White */
   height: 100vh; /* Fill the entire viewport height */
 }
-
-
 /* Logo */
 .App-logo {
   height: 40vmin;
@@ -138,8 +136,12 @@ h6 {
   color: #808080; /* Gray */
 }
 
+p{
+  color: black;
+}
+
 /* Button styles */
-.button {
+/* .button {
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -148,7 +150,8 @@ h6 {
   text-decoration: none;
   border-radius: 4px;
   cursor: pointer;
-}
+  margin: 50px;
+} */
 
 .primary-button {
   background-color: #337ab7; /* Primary color */

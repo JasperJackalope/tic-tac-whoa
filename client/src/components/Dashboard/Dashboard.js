@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import './dashboard.css'; // import the CSS file
-// import '../../App2.css';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../../utils/queries';
 
@@ -15,8 +14,8 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <Navigation />
-      <section className="portfolio container text-center">
-        <h2>Welcome {user.username}!</h2>
+      <section className="portfolio container text-cente padding">
+        <h3>Welcome {user.username}!</h3>
         <Link to="/game">
           <button>Start New Game</button>
         </Link>

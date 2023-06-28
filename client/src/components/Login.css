@@ -13,7 +13,7 @@
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
     padding: 30px;
     border-radius: 8px;
-    background-color: #ffffff; /* White */
+    margin-bottom: 125px; /* Position the container 50px up */
   }
   
   /* Login form content */
@@ -64,7 +64,7 @@
     padding: 0.75em;
     border: none;
     border-radius: 4px;
-    background-color: #4169e1; /* Royal blue */
+    background-color: #ccccff; /* Royal blue */
     color: #ffffff; /* White */
     font-weight: bold;
     cursor: pointer;
@@ -80,5 +80,5 @@
   }
   
   .pink {
-    background-color: #f26b8A;
+    background-color: #f26b8a;
   }

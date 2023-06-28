@@ -7,7 +7,7 @@ function NavigationBar() {
     <nav className="nav"> {/* Add the class name to the nav */}
       <ul>
         <li>
-          <a className="nav-item" href="/dashboard">Dashboard</a> {/* Add the class name to the anchor */}
+          <a className="nav-item" href="/dashboard">Main</a> {/* Add the class name to the anchor */}
         </li>
         <li>
           <a className="nav-item" href="/">Log Out</a> {/* Add the class name to the anchor */}

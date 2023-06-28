@@ -37,40 +37,6 @@
   color: #77dd77; /* Pastel green */
 }
 
-/* Authentication form container */
-.Auth-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-
-/* Authentication form */
-.Auth-form {
-  width: 420px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-  padding-top: 30px;
-  padding-bottom: 20px;
-  border-radius: 8px;
-  background-color: #ffffff; /* White */
-}
-
-/* Authentication form content */
-.Auth-form-content {
-  padding-left: 12%;
-  padding-right: 12%;
-}
-
-/* Authentication form title */
-.Auth-form-title {
-  text-align: center;
-  margin-bottom: 1em;
-  font-size: 24px;
-  color: #333333; /* Dark gray */
-  font-weight: 800;
-}
-
 /* Label */
 label {
   font-size: 14px;
@@ -211,6 +177,6 @@ ul {
 }
 
 /* Button styles */
-.button {
+/* .button {
   margin: 0 10px;
-}
+} */

@@ -1,14 +1,25 @@
-.portfolio {
-    max-width: 1200px;
-  }
-  
-  .projects-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    justify-items: center;
+
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
   }
 
-  h2 {
-    text-align: center;
+  button {
+    width: 25%;
+    padding: 0.75em;
+    border: none;
+    border-radius: 4px;
+    background-color: #5dbb63;
+    color: #ffffff; 
+    font-weight: bold;
+    cursor: pointer;
   }
+
+.padding {
+  margin: 100px;
+  flex: auto;
+}
+  
+.black{
+  color: black;
+}
