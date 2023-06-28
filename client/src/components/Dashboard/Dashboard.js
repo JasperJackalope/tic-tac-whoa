@@ -16,7 +16,7 @@ const Dashboard = () => {
       <Navigation />
       <section className="portfolio container text-center">
         <h2>Welcome {user.username}!</h2>
-        <Link to="/week">
+        <Link to="/game">
           <button>Start New Game</button>
         </Link>
       </section>

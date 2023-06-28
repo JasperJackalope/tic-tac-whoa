@@ -124,9 +124,6 @@ const Login = () => {
               Submit
             </button>
           </div>
-          <p className="text-center mt-2">
-            Forgot <a href="#">password?</a>
-          </p>
         </div>
       </form>
     </div>
@@ -172,9 +169,6 @@ return (
             Submit
           </button>
         </div>
-        <p className="text-center mt-2">
-          Forgot <a href="#">password?</a>
-        </p>
       </div>
     </form>
   </div>

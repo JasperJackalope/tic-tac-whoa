@@ -5,7 +5,7 @@ import React from 'react';
 const Header = () => {
   return (
     <header>
-      <h1>Habit Tracker</h1>
+      <h1>tic-tac-WHOA!</h1>
       {/* <Navigation /> */}
     </header>
   );

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import Habit from '../Habit/Habit';
 import Navigation from '../Navigation/Navigation';
-import "./Week.css";
+import "./Game.css";
 
 function Square({ value, onSquareClick, isHighlighted }) {
   return (
@@ -69,6 +68,15 @@ function Game() {
     setCurrentMove(0);
   }
 
+  let status;
+  if (winner) {
+    status = `${winner.winner} Wins!`;
+  } else if (isBoardFull) {
+    status = "The only winning move is not to play.";
+  } else {
+    status = `Next player: ${xIsNext ? 'X' : 'O'}`;
+  }
+
   const currentMoveDescription =
     currentMove > 0 ? `You are at move #${currentMove}` : 'Go to game start';
 
@@ -93,29 +101,13 @@ function Game() {
         <div>
           <button onClick={restartGame}>Restart Game</button>
         </div>
-        <div>{xIsNext ? "Player: X" : "Player: O"}</div> {/* Display current player */}
-        {winner ? (
-          <Modal message={`${winner.winner} Wins!`} onRestart={restartGame} />
-        ) : isBoardFull ? (
-          <Modal message="The only winning move is not to play." onRestart={restartGame} />
-        ) : (
-          <ol>{moves}</ol>
-        )}
+        <div>{status}</div>
+        {!winner && !isBoardFull && <ol>{moves}</ol>}
       </div>
     </div>
   );
 }
 
-function Modal({ message, onRestart }) {
-  return (
-    <div className="modal">
-      <div className="modal-content">
-        <h2>{message}</h2>
-        <button onClick={onRestart}>Start New Game</button>
-      </div>
-    </div>
-  );
-}
 
 function calculateRowCol(move) {
   const row = Math.floor(move / 3) + 1;
@@ -148,16 +140,16 @@ function calculateWinner(squares) {
   return null;
 }
 
-const Week = () => {
+const GamePage = () => {
   return (
     <div>
       <Navigation />
       <section className="portfolio container text-center">
-        <h2>This is the best Dashboard</h2>
+        <h2>Gnarly Dudes and Dudettes!</h2>
         <Game />
       </section>
     </div>
   );
 };
 
-export default Week;
+export default GamePage;
