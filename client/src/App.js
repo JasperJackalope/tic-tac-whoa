@@ -15,11 +15,17 @@ import GamePage from './components/Game/Game';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App2.css";
 
-function App() {
-  const [route, setRoute] = React.useState(window.location.pathname);
-  const httpLink = createHttpLink({
-    uri: '/graphql',
-  });
+// function App() {
+//   const [route, setRoute] = React.useState(window.location.pathname);
+//   const httpLink = createHttpLink({
+//     uri: '/graphql',
+//   });
+
+  function App() {
+    const [setRoute] = React.useState(window.location.pathname);
+    const httpLink = createHttpLink({
+      uri: '/graphql',
+    });
   
   // Construct request middleware that will attach the JWT token to every request as an `authorization` header
   const authLink = setContext((_, { headers }) => {
