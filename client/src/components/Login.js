@@ -16,9 +16,9 @@ const Login = () => {
     email: '',
     password: '',
   });
-  // const [addUser, { error, data }] = useMutation(ADD_USER);
+  const [addUser, { error, data }] = useMutation(ADD_USER);
   const [loginState, setLoginState] = useState({ email: '', password: '' });
-  // const [login, { error: loginError, data: loginData }] = useMutation(LOGIN_USER);
+  const [login, { error: loginError, data: loginData }] = useMutation(LOGIN_USER);
 
   const handleSignupFormSubmit = async (event) => {
     event.preventDefault();
