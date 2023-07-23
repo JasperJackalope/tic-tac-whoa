@@ -60,12 +60,14 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/public')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/public', 'index.html'));
-  });
+  server.applyMiddleware({ app });
 }
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/public/index.html'));
+});
 
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
