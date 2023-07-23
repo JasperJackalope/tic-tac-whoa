@@ -61,11 +61,11 @@ app.use(express.json());
 
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
   // Serve static assets from the client/build directory
-  app.use(express.static(path.join(__dirname, '../client/build')));
+  app.use(express.static(path.join(__dirname, '../client/public')));
 
   // Catch-all route to serve the React app's index.html
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../client/public', 'index.html'));
   });
 }
 
