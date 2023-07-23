@@ -7,7 +7,8 @@ import { QUERY_ME } from '../../utils/queries';
 
 // This is the best Dashboard
 const Dashboard = () => {
-  const { loading, data } = useQuery(QUERY_ME);
+  // const { loading, data } = useQuery(QUERY_ME);
+  const {data } = useQuery(QUERY_ME);
 
   const user = data?.me || data?.user || {};
 

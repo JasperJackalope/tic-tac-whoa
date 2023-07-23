@@ -80,17 +80,17 @@ function Game() {
   const currentMoveDescription =
     currentMove > 0 ? `You are at move #${currentMove}` : 'Go to game start';
 
-  const moves = history.map((squares, move) => {
-    const description = move === currentMove ? currentMoveDescription : `Go to move #${move}`;
-    const location = move === 0 ? '' : `(${calculateRowCol(move)})`;
-    return (
-      <li key={move}>
-        <button onClick={() => jumpTo(move)}>
-          {description} {location}
-        </button>
-      </li>
-    );
-  });
+  // const moves = history.map((squares, move) => {
+  //   const description = move === currentMove ? currentMoveDescription : `Go to move #${move}`;
+  //   const location = move === 0 ? '' : `(${calculateRowCol(move)})`;
+  //   return (
+  //     <li key={move}>
+  //       <button onClick={() => jumpTo(move)}>
+  //         {description} {location}
+  //       </button>
+  //     </li>
+  //   );
+  // });
 
   return (
     <div className="game">
@@ -102,7 +102,8 @@ function Game() {
         <div>
           <button onClick={restartGame}>Restart Game</button>
         </div>
-        {!winner && !isBoardFull && <ol>{moves}</ol>}
+        {/* {!winner && !isBoardFull && <ol>{moves}</ol>} */}
+        {!winner && !isBoardFull}
       </div>
     </div>
   );

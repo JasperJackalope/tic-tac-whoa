@@ -20,7 +20,6 @@ const Login = () => {
   const [loginState, setLoginState] = useState({ email: '', password: '' });
   const [login, { error: loginError, data: loginData }] = useMutation(LOGIN_USER);
 
-
   const handleSignupFormSubmit = async (event) => {
     event.preventDefault();
     console.log(dataSignUp);
